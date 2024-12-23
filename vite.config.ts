@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import path from "path";
 import react from '@vitejs/plugin-react-swc'
+import tailwindcss from 'tailwindcss'
 import autoprefixer from 'autoprefixer';
 import postcsspxtoviewport from "postcss-px-to-viewport-8-plugin";
 
@@ -32,6 +33,7 @@ export default defineConfig({
     },
     postcss: {
       plugins: [
+        tailwindcss(),
         autoprefixer(),
         postcsspxtoviewport({
           viewportWidth: 750, //视窗的宽度，对应的是我们设计稿的宽度，一般是750

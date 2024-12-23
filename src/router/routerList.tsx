@@ -1,8 +1,11 @@
 import { lazy } from "react";
 import { createBrowserRouter, Navigate } from "react-router-dom";
+
+import Layout from '@/components/layout';
+
 import type { DataRouteObject } from "react-router-dom";
 
-const Layout = lazy(() => import("@/components/layout"));
+const Trade = lazy(() => import('@/pages/trade'));
 
 // 页面
 export const defaultRouteList: DataRouteObject[] = [];
@@ -16,7 +19,13 @@ const mainRouteList: DataRouteObject = {
       <Layout />
     </>
   ),
-  children: [],
+  children: [
+    {
+      id: 'tradePage',
+      path: '/trade',
+      element: <Trade />
+    }
+  ],
 };
 
 function getNotFoundRoute(defaultPath: string): DataRouteObject {
