@@ -1,13 +1,15 @@
 import React from "react";
 
-import { IPoolItem } from '@fe-app/api';
+import { IPoolItem, TIME_FILTER } from '@fe-app/api';
 
 interface TokenItemCompProps {
-  poolInfo: IPoolItem,
+  poolInfo: IPoolItem;
+  timeFilter: TIME_FILTER;
 }
 
 const TokenItem: React.FC<TokenItemCompProps> = ({
-  poolInfo
+  poolInfo,
+  timeFilter,
 }) => {
   return (
     <div className="flex item-middle justify-center px-[15px] py-3">
@@ -23,7 +25,7 @@ const TokenItem: React.FC<TokenItemCompProps> = ({
         {poolInfo.baseToken.symbol}
       </div>
 
-      <div className="text-right font-primary">
+      <div className="mr-6 text-right font-primary">
         <div className="font-medium leading-5 text-normal">
           ${poolInfo.priceUsd}
         </div>
@@ -31,6 +33,8 @@ const TokenItem: React.FC<TokenItemCompProps> = ({
           ${poolInfo.fdv}
         </div>
       </div>
+
+      <div className=""></div>
     </div>
   );
 }
