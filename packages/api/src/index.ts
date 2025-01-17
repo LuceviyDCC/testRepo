@@ -1,3 +1,3 @@
-export function helloWorld() {
-    console.log('Hello world')
-}
+export * from "../types";
+
+export { getIndexTrendingList, getIndexNewList } from "./dex";
